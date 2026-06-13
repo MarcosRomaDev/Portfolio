@@ -10,8 +10,8 @@
 
 > Arrancar con lo básico: repo, estructura HTML/CSS y algo publicado en GitHub Pages desde el primer día.
 
-- [ ] Crear repo en GitHub y activar GitHub Pages
-- [ ] Estructura HTML semántica: header, about, projects, contact
+- [X] Crear repo en GitHub y activar GitHub Pages
+- [X] Estructura HTML semántica: header, about, projects, contact
 - [ ] Reset CSS + variables CSS (colores, tipografía, espaciado)
 - [ ] Navbar fija con scroll suave a secciones
 - [ ] Subir primera versión aunque esté vacía
