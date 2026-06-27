@@ -251,9 +251,25 @@ section.bg-subtle {
   background-color: var(--color-accent-hover);
 }
 
+.btn-secondary {
+  display: inline-block;
+  border: 1px solid var(--color-border-strong);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent-soft);
+}
+
 /* ============================================
    ABOUT
    ============================================ */
+
 .section-label {
   font-family: var(--font-display);
   font-size: var(--text-xs);
@@ -309,11 +325,36 @@ section.bg-subtle {
 .chip {
   font-size: var(--text-2xl);
   padding: var(--space-4);
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-border);
   filter: grayscale(100%);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ============================================
+   PROJETCS
+   ============================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  padding: var(--space-6);
+  gap: var(--space-4);
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: auto;
 }
 
 /* ============================================
