@@ -10,11 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
   </head>
   <body>
     <header id="header">
       <nav>
-        <span class="logo">Marcos Romá</span>
+        <a href="#hero" class="logo">Marcos Romá</a>
         <ul>
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#projects">Proyectos</a></li>
@@ -61,11 +65,88 @@
               <img src="assets/sobre_mi.png" alt="Marcos Romá" />
             </div>
           </div>
+          <p class="skills-label">— Skills —</p>
+          <div class="skills">
+            <div class="chip"><i class="devicon-html5-plain"></i></div>
+            <div class="chip"><i class="devicon-css3-plain"></i></div>
+            <div class="chip"><i class="devicon-javascript-plain"></i></div>
+            <div class="chip"><i class="devicon-java-plain"></i></div>
+            <div class="chip">
+              <i class="devicon-azuresqldatabase-plain"></i>
+            </div>
+            <div class="chip"><i class="devicon-git-plain"></i></div>
+          </div>
         </div>
       </section>
 
       <section id="projects">
-        <!-- Semana 3 -->
+        <div class="container">
+          <p class="section-label">— Proyectos —</p>
+          <div class="projects-grid">
+            <article class="project-card">
+              <img src="assets/finances-ej.jpg" alt="Finanzas" />
+              <h3>App Web Control de Finanzas Personales</h3>
+              <p>
+                Aplicación de gestión financiera personal con CRUD completo de
+                ingresos y gastos. Backend en Spring Boot con persistencia en
+                H2, y frontend en JavaScript vanilla con gráficas interactivas
+                para visualizar el balance mensual.
+              </p>
+              <div class="skills">
+                <div class="chip"><i class="devicon-html5-plain"></i></div>
+                <div class="chip"><i class="devicon-css3-plain"></i></div>
+                <div class="chip"><i class="devicon-javascript-plain"></i></div>
+                <div class="chip"><i class="devicon-java-plain"></i></div>
+                <div class="chip"><i class="devicon-spring-plain"></i></div>
+                <div class="chip"><i class="devicon-chartjs-plain"></i></div>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-primary">Demo</a>
+                <a href="#" class="btn-secondary">Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="assets/dino.jpg" alt="Juego de plataformas" />
+              <h3>Dino Runner 2D</h3>
+              <p>
+                Juego de plataformas estilo arcade inspirado en el dinosaurio de
+                Google Chrome, desarrollado con HTML5 Canvas y JavaScript
+                vanilla. Incluye bucle de juego con requestAnimationFrame,
+                detección de colisiones y sistema de puntuación.
+              </p>
+              <div class="skills">
+                <div class="chip"><i class="devicon-html5-plain"></i></div>
+                <div class="chip"><i class="devicon-css3-plain"></i></div>
+                <div class="chip"><i class="devicon-javascript-plain"></i></div>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-primary">Demo</a>
+                <a href="#" class="btn-secondary">Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="assets/eltiempo.jpg" alt="App del tiempo" />
+              <h3>ClimaApp</h3>
+              <p>
+                Aplicación que consulta una API meteorológica en tiempo real
+                para mostrar el clima de cualquier ciudad. Construida con
+                JavaScript vanilla usando fetch y async/await, con una interfaz
+                limpia y responsive.
+              </p>
+              <div class="skills">
+                <div class="chip"><i class="devicon-html5-plain"></i></div>
+                <div class="chip"><i class="devicon-css3-plain"></i></div>
+                <div class="chip"><i class="devicon-javascript-plain"></i></div>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn-primary">Demo</a>
+                <a href="#" class="btn-secondary">Repo</a>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section id="contact">

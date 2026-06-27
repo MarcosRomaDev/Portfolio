@@ -147,7 +147,10 @@ h4 {
 }
 
 section {
+  min-height: 100vh;
   padding: var(--space-24) 0;
+  display: flex;
+  align-items: center;
 }
 
 section.bg-subtle {
@@ -193,10 +196,13 @@ section.bg-subtle {
    HERO
    ============================================ */
 #hero {
+  min-height: 100vh;
   padding-top: calc(var(--space-24) + 64px);
   padding-bottom: var(--space-24);
   background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border-strong);
+  display: flex;
+  align-items: center;
 }
 
 .hero-label {
@@ -245,9 +251,25 @@ section.bg-subtle {
   background-color: var(--color-accent-hover);
 }
 
+.btn-secondary {
+  display: inline-block;
+  border: 1px solid var(--color-border-strong);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent-soft);
+}
+
 /* ============================================
    ABOUT
    ============================================ */
+
 .section-label {
   font-family: var(--font-display);
   font-size: var(--text-xs);
@@ -280,4 +302,91 @@ section.bg-subtle {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   filter: grayscale(100%);
+}
+
+.skills-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.chip {
+  font-size: var(--text-2xl);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  filter: grayscale(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   PROJETCS
+   ============================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  padding: var(--space-6);
+  gap: var(--space-4);
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: auto;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  #header nav ul {
+    gap: var(--space-4);
+  }
+
+  #hero {
+    padding-top: calc(var(--space-16) + 64px);
+    padding-bottom: var(--space-16);
+  }
+
+  #hero h1 {
+    font-size: var(--text-4xl);
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  .about-text h2 {
+    font-size: var(--text-3xl);
+  }
 }
