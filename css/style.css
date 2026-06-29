@@ -277,6 +277,7 @@ section.bg-subtle {
   letter-spacing: 0.2em;
   color: var(--color-text-tertiary);
   margin-bottom: var(--space-12);
+  text-align: center;
 }
 
 .about-grid {
@@ -351,6 +352,17 @@ section.bg-subtle {
 }
 
 .project-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: auto;
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+
+.contact-links {
   display: flex;
   justify-content: center;
   gap: var(--space-4);
