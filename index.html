@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -22,15 +22,20 @@
         <ul>
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#footer">Contacto</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section id="hero">
+        <div class="hero-shapes" aria-hidden="true">
+          <div class="glow-orb glow-orb-1"></div>
+          <div class="glow-orb glow-orb-2"></div>
+          <div class="glow-orb glow-orb-3"></div>
+        </div>
         <div class="container">
-          <p class="hero-label">Desarrollador Web</p>
+          <span class="hero-badge">Desarrollador Web</span>
           <h1>Hola, soy<br /><span class="accent">Marcos Romá</span></h1>
           <p class="hero-sub">
             Estudiante de DAW apasionado por crear interfaces limpias y
@@ -86,12 +91,7 @@
             <article class="project-card">
               <img src="assets/finances-ej.jpg" alt="Finanzas" />
               <h3>App Web Control de Finanzas Personales</h3>
-              <p>
-                Aplicación de gestión financiera personal con CRUD completo de
-                ingresos y gastos. Backend en Spring Boot con persistencia en
-                H2, y frontend en JavaScript vanilla con gráficas interactivas
-                para visualizar el balance mensual.
-              </p>
+              <p>Aplicación de gestión financiera personal con CRUD completo</p>
               <div class="skills">
                 <div class="chip"><i class="devicon-html5-plain"></i></div>
                 <div class="chip"><i class="devicon-css3-plain"></i></div>
@@ -111,9 +111,7 @@
               <h3>Dino Runner 2D</h3>
               <p>
                 Juego de plataformas estilo arcade inspirado en el dinosaurio de
-                Google Chrome, desarrollado con HTML5 Canvas y JavaScript
-                vanilla. Incluye bucle de juego con requestAnimationFrame,
-                detección de colisiones y sistema de puntuación.
+                Google Chrome.
               </p>
               <div class="skills">
                 <div class="chip"><i class="devicon-html5-plain"></i></div>
@@ -131,9 +129,7 @@
               <h3>ClimaApp</h3>
               <p>
                 Aplicación que consulta una API meteorológica en tiempo real
-                para mostrar el clima de cualquier ciudad. Construida con
-                JavaScript vanilla usando fetch y async/await, con una interfaz
-                limpia y responsive.
+                para mostrar el clima de cualquier ciudad.
               </p>
               <div class="skills">
                 <div class="chip"><i class="devicon-html5-plain"></i></div>
@@ -149,27 +145,24 @@
         </div>
       </section>
 
-      <section id="contact">
-        <div class="container">
-          <p class="section-label">— Contacto —</p>
-          <div class="contact-links">
-            <a href="mailto:marcos.roma.dev@gmail.com" class="btn-primary"
-              >Email</a
-            >
-            <a
-              href="https://github.com/MarcosRomaDev"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener"
-              >GitHub</a
-            >
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer id="footer">
-      <!-- Semana 4 -->
+      <div class="container">
+        <p class="section-label">— Contacto —</p>
+        <div class="contact-links">
+          <a href="mailto:marcos.roma.dev@gmail.com" class="btn-primary"
+            >Email</a
+          >
+          <a
+            href="https://github.com/MarcosRomaDev"
+            class="btn-secondary"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
