@@ -48,23 +48,23 @@ textarea {
    ============================================ */
 :root {
   /* Colores principales */
-  --color-bg: #ffffff;
-  --color-bg-card: #f5f5f5;
-  --color-bg-subtle: #f0f0f0;
+  --color-bg: #0f1c2e;
+  --color-bg-card: rgba(255, 255, 255, 0.06);
+  --color-bg-subtle: rgba(255, 255, 255, 0.04);
 
   /* Acento */
-  --color-accent: #000000;
-  --color-accent-hover: #333333;
-  --color-accent-soft: #e8e8e8;
+  --color-accent: #ff9d57;
+  --color-accent-hover: #ff7f2a;
+  --color-accent-soft: rgba(255, 157, 87, 0.2);
 
   /* Texto */
-  --color-text-primary: #000000;
-  --color-text-secondary: #555555;
-  --color-text-tertiary: #999999;
+  --color-text-primary: #f5f7fa;
+  --color-text-secondary: #c7d2e0;
+  --color-text-tertiary: #8d9bb0;
 
   /* Bordes */
-  --color-border: #e0e0e0;
-  --color-border-strong: #000000;
+  --color-border: rgba(255, 255, 255, 0.18);
+  --color-border-strong: rgba(245, 247, 250, 0.7);
 
   /* Tipografía */
   --font-display: "Space Mono", monospace;
@@ -126,6 +126,12 @@ body {
   font-size: var(--text-base);
   color: var(--color-text-primary);
   background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(8, 16, 30, 0.4), rgba(8, 16, 30, 0.4)),
+    url("../assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -196,13 +202,85 @@ section.bg-subtle {
    HERO
    ============================================ */
 #hero {
+  position: relative;
   min-height: 100vh;
   padding-top: calc(var(--space-24) + 64px);
   padding-bottom: var(--space-24);
-  background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border-strong);
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(60px);
+  animation: float-orb 9s ease-in-out infinite;
+}
+
+.glow-orb-1 {
+  top: 8%;
+  right: 4%;
+  width: 320px;
+  height: 320px;
+  background-color: var(--color-accent);
+  opacity: 0.55;
+  animation-delay: 0s;
+}
+
+.glow-orb-2 {
+  top: 42%;
+  right: 22%;
+  width: 260px;
+  height: 260px;
+  background-color: #4fd1ff;
+  opacity: 0.45;
+  animation-delay: -3s;
+}
+
+.glow-orb-3 {
+  bottom: 6%;
+  right: 14%;
+  width: 180px;
+  height: 180px;
+  background-color: var(--color-accent);
+  opacity: 0.35;
+  animation-delay: -6s;
+}
+
+@keyframes float-orb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-25px, 25px) scale(1.08);
+  }
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
 }
 
 .hero-label {
@@ -243,7 +321,7 @@ section.bg-subtle {
   font-size: var(--text-xs);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: var(--radius-md);
   transition: background-color var(--transition-fast);
 }
 
@@ -259,6 +337,7 @@ section.bg-subtle {
   font-size: var(--text-xs);
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  border-radius: var(--radius-md);
   transition: background-color var(--transition-fast);
 }
 
@@ -327,6 +406,7 @@ section.bg-subtle {
   font-size: var(--text-2xl);
   padding: var(--space-4);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   filter: grayscale(100%);
   display: flex;
   align-items: center;
@@ -347,6 +427,7 @@ section.bg-subtle {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: var(--space-6);
   gap: var(--space-4);
 }
@@ -375,6 +456,10 @@ section.bg-subtle {
 @media (max-width: 768px) {
   #header nav ul {
     gap: var(--space-4);
+  }
+
+  .hero-shapes {
+    display: none;
   }
 
   #hero {
