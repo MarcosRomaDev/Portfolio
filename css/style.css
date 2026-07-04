@@ -133,6 +133,7 @@ body {
   background-position: top center;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1,
@@ -208,7 +209,6 @@ section.bg-subtle {
 
   display: flex;
   align-items: center;
-  overflow: hidden;
 }
 
 #hero .container {
@@ -217,17 +217,19 @@ section.bg-subtle {
 }
 
 .hero-shapes {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
+  transform: rotate(var(--scroll-rotate, 0deg));
+  transition: transform 0.15s linear;
 }
 
 .glow-orb {
   position: absolute;
   border-radius: var(--radius-full);
   filter: blur(60px);
-  animation: float-orb 9s ease-in-out infinite;
+  opacity: 0;
 }
 
 .glow-orb-1 {
@@ -236,8 +238,12 @@ section.bg-subtle {
   width: 320px;
   height: 320px;
   background-color: var(--color-accent);
-  opacity: 0.55;
-  animation-delay: 0s;
+  --rest-opacity: 0.55;
+  --enter-x: 70vw;
+  --enter-y: 0;
+  animation:
+    orb-enter 1.1s ease-out 0s forwards,
+    float-orb 9s ease-in-out 1.1s infinite;
 }
 
 .glow-orb-2 {
@@ -246,8 +252,12 @@ section.bg-subtle {
   width: 260px;
   height: 260px;
   background-color: #4fd1ff;
-  opacity: 0.45;
-  animation-delay: -3s;
+  --rest-opacity: 0.45;
+  --enter-x: 0;
+  --enter-y: -70vh;
+  animation:
+    orb-enter 1.1s ease-out 0.2s forwards,
+    float-orb 10s ease-in-out 1.3s infinite;
 }
 
 .glow-orb-3 {
@@ -256,8 +266,23 @@ section.bg-subtle {
   width: 180px;
   height: 180px;
   background-color: var(--color-accent);
-  opacity: 0.35;
-  animation-delay: -6s;
+  --rest-opacity: 0.35;
+  --enter-x: 0;
+  --enter-y: 70vh;
+  animation:
+    orb-enter 1.1s ease-out 0.4s forwards,
+    float-orb 11s ease-in-out 1.5s infinite;
+}
+
+@keyframes orb-enter {
+  from {
+    opacity: 0;
+    transform: translate(var(--enter-x, 0), var(--enter-y, 0)) scale(0.6);
+  }
+  to {
+    opacity: var(--rest-opacity, 1);
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 @keyframes float-orb {
@@ -473,21 +498,34 @@ section.bg-subtle {
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
+  #header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: var(--space-2);
+  }
+
+  #header .logo {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
   #header nav ul {
     gap: var(--space-4);
   }
 
-  .hero-shapes {
-    display: none;
+  #hero {
+    padding-top: calc(var(--space-16) + 96px);
+    padding-bottom: var(--space-16);
   }
 
-  #hero {
-    padding-top: calc(var(--space-16) + 64px);
-    padding-bottom: var(--space-16);
+  #hero .container {
+    text-align: center;
   }
 
   .hero-sub {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .about-grid {
@@ -500,6 +538,15 @@ section.bg-subtle {
 
   .about-text h2 {
     font-size: var(--text-3xl);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links,
+  .contact-links {
+    flex-wrap: wrap;
   }
 }
 
