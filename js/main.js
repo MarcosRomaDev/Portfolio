@@ -62,7 +62,10 @@ function animateParallax() {
   requestAnimationFrame(animateParallax);
 }
 
-createParticles(28);
+// En móvil bajamos la cantidad: menos GPU, batería y pantalla más pequeña.
+// Mismo breakpoint que el CSS para que estilos y lógica vayan a la par.
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+createParticles(isMobile ? 10 : 28);
 if (!reduceMotion) {
   animateParallax();
 }
